@@ -1,0 +1,73 @@
+$color-grey: #D3D3D3;
+
+@mixin fadeInAnimation(){
+    transition: .2s ease-in-out;
+    -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s;
+        -ms-animation: fadein 2s;
+         -o-animation: fadein 2s;
+            animation: fadein 2s;
+}
+
+.Gallery {
+    color: black;
+    text-align: center;
+    margin-top: 5%;
+}
+.GenreButtons {
+    margin-top: 30px;
+    width: 60%;
+    margin-left: 20%;
+}
+.GenreResults {
+    @include fadeInAnimation();
+}
+.GalleryResult {
+    width: 80%;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-bottom: 50px;
+}
+.GalleryItem {
+    padding: 30px;
+}
+.GalleryItem:hover{
+    background-color: $color-grey;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+.GalleryImage:hover {
+    transform: translateY(-8px);
+}
+.GalleryDetails {
+    @include fadeInAnimation();
+
+    background-color: $color-grey;
+    border: 1px double #888;
+    width: 80%;
+    padding: 30px;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    h4 {
+        padding: 30px;
+    }
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

@@ -1,0 +1,25 @@
+$color-grey: #D3D3D3;
+$color-lightblue: #F0F8FF;
+
+.prev, .next {
+    cursor: pointer;
+    top: 50%;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 0 3px 3px 0;
+    background-color: $color-grey;
+    z-index: 10;
+    padding: 25px 10px;
+}
+.prev {
+    float: left;
+    //left: 0px;
+}
+.next {
+    float: right;
+    //right: 0px;
+}
+.prev:hover, .next:hover {
+    transition: .5s background-color ease;
+    background-color: $color-lightblue;
+}

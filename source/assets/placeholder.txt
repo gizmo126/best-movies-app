@@ -1,1 +1,10 @@
 assets go here
+
+https://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method
+http://www.hackingwithreact.com/read/1/13/rendering-an-array-of-data-with-map-and-jsx
+https://developers.themoviedb.org/3/getting-started/images
+https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
+https://stackoverflow.com/questions/11679567/using-css-for-fade-in-effect-on-page-load
+https://stackoverflow.com/questions/43762363/how-to-store-an-array-of-objects-in-local-storage
+https://stackoverflow.com/questions/30115324/pass-props-in-link-react-router/30115524
+https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/birth/premounting_with_componentwillmount.html
