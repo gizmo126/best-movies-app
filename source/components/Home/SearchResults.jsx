@@ -8,45 +8,45 @@ import { ListResult } from './ListResult.jsx'
 export class SearchResults extends Component {
     constructor(props){
         super(props);
-        this.state = { pages : 0, results : [], search : [] }
+        this.state = { pages : 0, results : [], search : [] };
     }
     componentWillMount() {
         // get the number of pages
         getResults(-1)
-          .then(function(response) {
-              this.setState({pages: response.data.total_pages});
-          }.bind(this))
-          .catch(function(error) {
-              console.log(error);
+            .then(function(response) {
+                this.setState({pages: response.data.total_pages});
+            }.bind(this))
+            .catch(function(error) {
+                console.log(error);
         });
         // get the top ranked movies
         getResults(this.state.pages)
-          .then(function(response) {
-              let results = [];
-              for(let i = 0; i < response.length; i++){
-                  for(let j = 0; j < response[i].data.results.length; j++){
-                      response[i].data.results[j].rank = i * response.length + j + 1;
-                      results.push(response[i].data.results[j]);
-                  }
-              }
-              this.setState({results: results});
-              this.setState({count: results.length})
-          }.bind(this))
-          .catch(function(error) {
-              console.log(error);
+            .then(function(response) {
+                let results = [];
+                for(let i = 0; i < response.length; i++){
+                    for(let j = 0; j < response[i].data.results.length; j++){
+                        response[i].data.results[j].rank = i * response.length + j + 1;
+                        results.push(response[i].data.results[j]);
+                    }
+                }
+                this.setState({results: results});
+                this.setState({count: results.length});
+            }.bind(this))
+            .catch(function(error) {
+                console.log(error);
         });
     }
     componentWillReceiveProps(nextProps){
         if(nextProps.userInput.length > 0 &&
             (this.props.radioOrder !== nextProps.sortBy ||
-            this.props.userInput !== nextProps.userInput ||
-            this.props.sortBy !== nextProps.sortBy)
+             this.props.userInput !== nextProps.userInput ||
+             this.props.sortBy !== nextProps.sortBy)
           ){
               let sortedResults = sortResults(this.state.results,
                                               nextProps.userInput,
                                               nextProps.sortBy,
                                               nextProps.radioOrder);
-              this.setState({search : sortedResults})
+              this.setState({search : sortedResults});
         }
     }
     render() {
@@ -54,19 +54,17 @@ export class SearchResults extends Component {
         // also display no results if searchbar is cleared
         if(this.props.userInput.length <= 0
             || typeof this.state.results[0] == 'undefined'
-            || typeof this.state.search[0] == 'undefined'){
+            || typeof this.state.search[0] == 'undefined' ){
             return(
-              <div className="SearchResults">
-                  <h1>No Results</h1>
-              </div>
+                <div className="SearchResults">
+                    <h1>No Results</h1>
+                </div>
             );
         }
         else {
             return(
                 <div className='SearchResults'>
-                    <ListResult
-                      results={this.state.search}
-                    />
+                    <ListResult results={this.state.search} />
                 </div>
              );
         }
@@ -93,8 +91,6 @@ function getResults(pages) {
     }
 }
 function sortResults(results, userInput, sortBy, radioOrder){
-    //https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
-
     let sortedResults = [];
     let searchResults = getMatching(results, userInput);
     if(sortBy == 'rank' && radioOrder == 'descending'){
@@ -106,18 +102,18 @@ function sortResults(results, userInput, sortBy, radioOrder){
         return sortedResults;
     } else if (sortBy == 'title' && radioOrder == 'descending') {
         sortedResults =
-          searchResults.sort(function(a, b){
-              if(a.title > b.title) return -1;
-              if(a.title < b.title) return 1;
-              return 0;
+            searchResults.sort(function(a, b){
+                if(a.title > b.title) return -1;
+                if(a.title < b.title) return 1;
+                return 0;
           });
         return sortedResults;
     } else if (sortBy == 'title' && radioOrder == 'ascending') {
         sortedResults =
-          searchResults.sort(function(a, b){
-              if(a.title < b.title) return -1;
-              if(a.title > b.title) return 1;
-              return 0;
+            searchResults.sort(function(a, b){
+                if(a.title < b.title) return -1;
+                if(a.title > b.title) return 1;
+                return 0;
           });
         return sortedResults;
     } else {

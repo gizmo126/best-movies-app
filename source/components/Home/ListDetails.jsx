@@ -6,10 +6,9 @@ import PropTypes from 'prop-types';
 import { ListResult } from './ListResult.jsx';
 
 export class ListDetails extends Component {
-    //https://stackoverflow.com/questions/43762363/how-to-store-an-array-of-objects-in-local-storage
     constructor(props){
         super(props);
-        this.state = { results : [], result : [], index : -1 }
+        this.state = { results : [], result : [], index : -1 };
         this.handlePrev = this.handlePrev.bind(this);
         this.handleNext = this.handleNext.bind(this);
     }
@@ -66,8 +65,7 @@ export class ListDetails extends Component {
                 <div className="prev" onClick={this.handlePrev}>&#x21E6;</div>
                 <div className="next" onClick={this.handleNext}>&#x21E8;</div>
                 <div className="ListDetailsImage">
-                    <Image inline size='medium'
-                      src={getImage(result)} />
+                    <Image inline size='medium' src={getImage(result)} />
                 </div>
                 <h1>{results[index].title}</h1>
                 <h3>Rank: {results[index].rank}</h3>
@@ -80,8 +78,6 @@ export class ListDetails extends Component {
 }
 
 function getImage(result) {
-    //https://image.tmdb.org/t/p/w185//
-    //https://developers.themoviedb.org/3/getting-started/images
     let url = result['poster_path'];
     if(!url){
         url = result['backdrop_path'];

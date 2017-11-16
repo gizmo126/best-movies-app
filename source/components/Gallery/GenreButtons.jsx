@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
 export class GenreButtons extends Component {
     constructor(props){
         super(props);
-        this.state = { genres : [] }
+        this.state = { genres : [] };
     }
     componentWillMount(){
         getGenres()
-          .then(function(response) {
-              this.setState({genres: response.data.genres});
-          }.bind(this))
-          .catch(function(error) {
-              console.log(error);
+            .then(function(response) {
+                this.setState({genres: response.data.genres});
+            }.bind(this))
+            .catch(function(error) {
+                console.log(error);
         });
     }
     render(){
@@ -22,8 +22,8 @@ export class GenreButtons extends Component {
             <div className="GenreButtons">
                 <List horizontal relaxed="very">
                       { this.state.genres.map((genre, index) => (
-                          <Button key={index} onClick={()=>this.props.handleButtonClick(genre.id)}
-                              basic compact>{genre.name}
+                          <Button key={index} onClick={()=>this.props.handleButtonClick(genre.id)} basic compact>
+                              {genre.name}
                           </Button>
                       ))}
                 </List>

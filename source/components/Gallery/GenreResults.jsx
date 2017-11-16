@@ -9,7 +9,7 @@ import { GalleryResult } from './GalleryResult.jsx';
 export class GenreResults extends Component {
     constructor(props){
         super(props);
-        this.state = { results : [] }
+        this.state = { results : [] };
     }
     componentWillMount(){
         getResults(this.props.genre)

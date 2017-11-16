@@ -8,33 +8,30 @@ export class ListResult extends Component {
         super(props);
     }
     render() {
-      //http://www.hackingwithreact.com/read/1/13/rendering-an-array-of-data-with-map-and-jsx
-
       return (
         <div className="ListResult">
           <List relaxed="very">
             { this.props.results.map((result, index) => (
                 <List.Item key={index}>
-                  <Link to={{pathname: '/list_details/',
-                              param: {  results : this.props.results,
-                                        index : index,
-                                        result: result
-                                      }
-                            }}>
-                    <div className="listItem">
-                        <div className="listImage">
-                            <Image inline size='tiny'
-                              src={getImage(result)} />
-                        </div>
-                        <div className="listContent">
-                            <List.Content>
-                                <h1>{result.title}</h1>
-                                <h3>Rank: {result.rank}</h3>
-                                <h3>Rating: {result.vote_average}</h3>
-                            </List.Content>
-                        </div>
-                     </div>
-                  </Link>
+                    <Link to={{pathname: '/list_details/',
+                                param: {  results : this.props.results,
+                                          index : index,
+                                          result: result
+                                        }
+                              }}>
+                      <div className="listItem">
+                          <div className="listImage">
+                              <Image inline size='tiny' src={getImage(result)} />
+                          </div>
+                          <div className="listContent">
+                              <List.Content>
+                                  <h1>{result.title}</h1>
+                                  <h3>Rank: {result.rank}</h3>
+                                  <h3>Rating: {result.vote_average}</h3>
+                              </List.Content>
+                          </div>
+                       </div>
+                    </Link>
                 </List.Item>
               ))}
           </List>
@@ -44,8 +41,6 @@ export class ListResult extends Component {
 }
 
 function getImage(result) {
-    //https://image.tmdb.org/t/p/w185//
-    //https://developers.themoviedb.org/3/getting-started/images
     let url = result['poster_path'];
     if(!url){
         url = result['backdrop_path'];

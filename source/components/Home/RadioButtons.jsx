@@ -8,28 +8,28 @@ export class RadioButtons extends Component {
     }
     render() {
         return (
-          <Form>
-            <Form.Field>
-              <Radio
-                label='Ascending'
-                name='radioGroup'
-                value='ascending'
-                checked={this.props.radioOrder === 'ascending'}
-                onChange={this.props.handleRadio}
-              />
-            </Form.Field>
-            <Form.Field>
-                <Radio
-                  label='Descending'
-                  name='radioGroup'
-                  value='descending'
-                  checked={this.props.radioOrder === 'descending'}
-                  onChange={this.props.handleRadio}
-                />
-            </Form.Field>
-          </Form>
+            <Form>
+                <Form.Field>
+                    <Radio
+                        label='Ascending'
+                        name='radioGroup'
+                        value='ascending'
+                        checked={this.props.radioOrder === 'ascending'}
+                        onChange={this.props.handleRadio}
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <Radio
+                        label='Descending'
+                        name='radioGroup'
+                        value='descending'
+                        checked={this.props.radioOrder === 'descending'}
+                        onChange={this.props.handleRadio}
+                    />
+                </Form.Field>
+            </Form>
         )
-  }
+    }
 }
 
 RadioButtons.propTypes = {

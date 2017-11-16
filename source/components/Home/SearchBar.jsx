@@ -58,9 +58,9 @@ export class SearchBar extends Component {
                     </div>
                 </div>
                 <SearchResults
-                  sortBy={this.state.sortBy}
-                  radioOrder={this.state.radioOrder}
-                  userInput={this.state.userInput}
+                    sortBy={this.state.sortBy}
+                    radioOrder={this.state.radioOrder}
+                    userInput={this.state.userInput}
                 />
             </div>
         );
