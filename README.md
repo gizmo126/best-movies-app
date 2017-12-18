@@ -6,7 +6,6 @@
 3. [Tips](#tips)
 4. [Rules](#rules)
 5. [Environment Setup Guide](#environment-setup-guide)
-6. [Submission Details](#submission-details)
 
 ## Assignment
 
