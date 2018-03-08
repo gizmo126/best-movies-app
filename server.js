@@ -1,5 +1,6 @@
 // This is added so Heroku stops complaining
-
+// had to make server.js and webpack run on different ports but simultaneously
+// then configure Procfile to run both in Heroku
 var path = require('path');
 var express = require('express');
 var app = express();
@@ -16,26 +17,3 @@ app.get('/', function (request, response) {
 app.listen(app.get('port'), function () {
     console.log('Node app is running on port', app.get('port'));
 });
-
-/*
-const path = require('path');
-const express = require('express');
-
-const app = express();
-
-const port = process.env.PORT ? process.env.PORT : 8181;
-const dist = path.join(__dirname, 'source');
-
-app.use(express.static(dist));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(dist, 'html/index.html'));
-});
-
-app.listen(port, (error) => {
-  if (error) {
-    console.log(error); // eslint-disable-line no-console
-  }
-  console.info('Express is listening on port %s.', port); // eslint-disable-line no-console
-});
-*/

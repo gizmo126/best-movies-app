@@ -7,7 +7,7 @@
     "watch": "webpack -d --watch",
     "build": "webpack",
     "prod": "NODE_ENV=production node server.js",
-    "dev": "node server.js & webpack-dev-server --content-base public/ --history-api-fallback",
+    "dev": "webpack-dev-server --content-base public/ --history-api-fallback",
     "start": "node server.js & webpack-dev-server --content-base public/ --history-api-fallback --port 8081",
     "postinstall": "webpack --config webpack.config.js -p --progress --colors"
   },

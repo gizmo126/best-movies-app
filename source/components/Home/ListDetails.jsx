@@ -63,7 +63,6 @@ export class ListDetails extends Component {
       let results = JSON.parse(this.state.results);
       let result = JSON.parse(this.state.result);
       let index = JSON.parse(this.state.index);
-      console.log(this.props.location.param.results);
       return (<div className="ListDetails">
       <h4>{index + 1}/{results.length}</h4>
       <div className="prev" onClick={this.handlePrev}>&#x21E6;</div>
