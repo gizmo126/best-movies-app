@@ -22,7 +22,7 @@ export class ListResult extends Component {
               }}>
               <div className="listItem">
                 <div className="listImage">
-                  <Image inline="inline" size='tiny' src={getImage(result)}/>
+                  <Image inline size='tiny' src={getImage(result)}/>
                 </div>
                 <div className="listContent">
                   <List.Content>

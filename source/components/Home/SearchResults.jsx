@@ -8,11 +8,7 @@ import { ListResult } from './ListResult.jsx'
 export class SearchResults extends Component {
    constructor(props) {
       super(props);
-      this.state = {
-         pages: 0,
-         results: [],
-         search: []
-      };
+      this.state = { pages: 0, results: [], search: [] };
    }
    componentWillMount() {
       // get the number of pages
@@ -41,22 +37,35 @@ export class SearchResults extends Component {
          });
    }
    componentWillReceiveProps(nextProps) {
-      if (nextProps.userInput.length > 0 && (this.props.radioOrder !== nextProps.sortBy || this.props.userInput !== nextProps.userInput || this.props.sortBy !== nextProps.sortBy)) {
-         let sortedResults = sortResults(this.state.results, nextProps.userInput, nextProps.sortBy, nextProps.radioOrder);
+      if (nextProps.userInput.length > 0 &&
+         (this.props.radioOrder !== nextProps.sortBy ||
+            this.props.userInput !== nextProps.userInput ||
+            this.props.sortBy !== nextProps.sortBy)
+      ) {
+         let sortedResults = sortResults(this.state.results,
+            nextProps.userInput,
+            nextProps.sortBy,
+            nextProps.radioOrder);
          this.setState({ search: sortedResults });
       }
    }
    render() {
       // results are initially undefined so don't render
       // also display no results if searchbar is cleared
-      if (this.props.userInput.length <= 0 || typeof this.state.results[0] == 'undefined' || typeof this.state.search[0] == 'undefined') {
-         return (<div className="SearchResults">
-        <h1>No Results</h1>
-      </div>);
+      if (this.props.userInput.length <= 0 ||
+         typeof this.state.results[0] == 'undefined' ||
+         typeof this.state.search[0] == 'undefined') {
+         return (
+            <div className="SearchResults">
+                <h1>No Results</h1>
+            </div>
+         );
       } else {
-         return (<div className='SearchResults'>
-        <ListResult results={this.state.search}/>
-      </div>);
+         return (
+            <div className='SearchResults'>
+                <ListResult results={this.state.search} />
+            </div>
+         );
       }
    }
 }
@@ -65,7 +74,7 @@ function getResults(pages) {
    let newUrl = 'movie/top_rated?api_key=ff9f06c5d8a831c7a2a99295c33936b7&language=en-US';
    if (pages >= 0) {
       let promises = [];
-      for (let i = 1; i < 10; i++) {
+      for (let i = 1; i < 29; i++) {
          promises.push(axios({
             method: 'post',
             baseURL: 'https://api.themoviedb.org/3/',
@@ -74,7 +83,11 @@ function getResults(pages) {
       }
       return axios.all(promises);
    } else {
-      return axios({ method: 'post', baseURL: 'https://api.themoviedb.org/3/', url: newUrl });
+      return axios({
+         method: 'post',
+         baseURL: 'https://api.themoviedb.org/3/',
+         url: newUrl
+      });
    }
 }
 
@@ -89,22 +102,20 @@ function sortResults(results, userInput, sortBy, radioOrder) {
       }
       return sortedResults;
    } else if (sortBy == 'title' && radioOrder == 'descending') {
-      sortedResults = searchResults.sort(function (a, b) {
-         if (a.title > b.title)
-            return -1;
-         if (a.title < b.title)
-            return 1;
-         return 0;
-      });
+      sortedResults =
+         searchResults.sort(function (a, b) {
+            if (a.title > b.title) return -1;
+            if (a.title < b.title) return 1;
+            return 0;
+         });
       return sortedResults;
    } else if (sortBy == 'title' && radioOrder == 'ascending') {
-      sortedResults = searchResults.sort(function (a, b) {
-         if (a.title < b.title)
-            return -1;
-         if (a.title > b.title)
-            return 1;
-         return 0;
-      });
+      sortedResults =
+         searchResults.sort(function (a, b) {
+            if (a.title < b.title) return -1;
+            if (a.title > b.title) return 1;
+            return 0;
+         });
       return sortedResults;
    } else {
       return sortedResults;
@@ -119,6 +130,7 @@ function getMatching(results, userInput) {
          sortedResults.push(results[i]);
       }
    }
+   return sortedResults;
 }
 
 SearchResults.propTypes = {
