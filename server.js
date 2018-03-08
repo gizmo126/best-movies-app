@@ -5,11 +5,12 @@ var express = require('express');
 
 var app = express();
 
-app.use(express.static(__dirname + '/source'));
-app.set('port', process.env.PORT || 8082);
+app.use('/public', express.static('/public'))
+app.use('/source', express.static('/source'))
+app.set('port', process.env.PORT || 3000);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 var server = app.listen(app.get('port'), function () {

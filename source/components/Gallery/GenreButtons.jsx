@@ -21,9 +21,9 @@ export class GenreButtons extends Component {
    }
    render() {
       return (<div className="GenreButtons">
-      <List horizontal="horizontal" relaxed="very">
+      <List horizontal relaxed="very">
         {
-          this.state.genres.map((genre, index) => (<Button key={index} onClick={() => this.props.handleButtonClick(genre.id)} basic="basic" compact="compact">
+          this.state.genres.map((genre, index) => (<Button key={index} onClick={() => this.props.handleButtonClick(genre.id)} basic compact>
             {genre.name}
           </Button>))
         }

@@ -1,7 +1,7 @@
 {
-  "root": "source/",
+  "root":"/",
   "clean_urls": false,
   "routes": {
-    "/**": "/html/index.html"
+    "/**": "public/html/index.html"
   }
 }

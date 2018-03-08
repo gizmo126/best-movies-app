@@ -26,7 +26,7 @@ const config = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx', '.sass']
+        extensions: ['.webpack.js', '.js', '.jsx', '.sass']
     },
 
     context: path.join(__dirname, 'source'),
