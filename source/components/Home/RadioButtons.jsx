@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Radio }
-from 'semantic-ui-react';
+import { Form, Radio } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 export class RadioButtons extends Component {

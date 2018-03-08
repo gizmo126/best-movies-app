@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export class GalleryResult extends Component {
-    constructor(props){
-        super(props);
-    }
-    render() {
-        return (
-            <div className="GalleryResult">
+   constructor(props) {
+      super(props);
+   }
+   render() {
+      return (
+         <div className="GalleryResult">
                 <Grid centered relaxed padded='horizontally' verticalAlign='middle' columns='equal'>
                   { this.props.results.map((result, index) => (
                       <List.Item key={index}>
@@ -29,16 +29,16 @@ export class GalleryResult extends Component {
                    ))}
                 </Grid>
             </div>
-        );
-      }
+      );
+   }
 }
 
 function getImage(result) {
-    let url = result['poster_path'];
-    if(!url){
-        url = result['backdrop_path'];
-    }
-    return 'https://image.tmdb.org/t/p/w500//' + url;
+   let url = result['poster_path'];
+   if (!url) {
+      url = result['backdrop_path'];
+   }
+   return 'https://image.tmdb.org/t/p/w500//' + url;
 }
 
 

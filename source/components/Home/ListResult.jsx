@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
-import {List, Image} from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { List, Image } from 'semantic-ui-react'
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export class ListResult extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (<div className="ListResult">
+   constructor(props) {
+      super(props);
+   }
+   render() {
+      return (<div className="ListResult">
       <List relaxed="very">
         {
           this.props.results.map((result, index) => (<List.Item key={index}>
@@ -37,19 +37,19 @@ export class ListResult extends Component {
         }
       </List>
     </div>);
-  }
+   }
 }
 
 function getImage(result) {
-  let url = result['poster_path'];
-  if (!url) {
-    url = result['backdrop_path'];
-  }
-  return 'https://image.tmdb.org/t/p/w185//' + url;
+   let url = result['poster_path'];
+   if (!url) {
+      url = result['backdrop_path'];
+   }
+   return 'https://image.tmdb.org/t/p/w185//' + url;
 }
 
 ListResult.propTypes = {
-  //results: PropTypes.object,
+   //results: PropTypes.object,
 }
 
 export default ListResult
