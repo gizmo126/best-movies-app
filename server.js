@@ -1,4 +1,5 @@
 // This is added so Heroku stops complaining
+/*
 const path = require('path');
 const express = require('express');
 
@@ -19,3 +20,4 @@ app.listen(port, (error) => {
   }
   console.info('Express is listening on port %s.', port); // eslint-disable-line no-console
 });
+*/
