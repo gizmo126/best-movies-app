@@ -1,13 +1,14 @@
 // This is added so Heroku stops complaining
-
 const express = require('express');
-const path = require('path');
 const app = express();
 
-app.use(express.static(__dirname));
-app.use('/source/assets', express.static(__dirname + '/source'));
+// Since the root/src dir contains our index.html
+app.use(express.static(__dirname + '/source/'));
 
-
+// Heroku bydefault set an ENV variable called PORT=443
+//  so that you can access your site with https default port.
+// Falback port will be 8080; basically for pre-production test in localhost
+// You will use $ npm run prod for this
 app.listen(process.env.PORT || 8081);
 
 /*

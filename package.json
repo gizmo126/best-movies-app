@@ -7,7 +7,7 @@
     "watch": "webpack -d --watch",
     "build": "webpack",
     "dev": "webpack-dev-server --content-base public/ --history-api-fallback",
-    "start": "npm run dev & node server.js"
+    "postinstall": "webpack --config webpack.config.js -p --progress --colors"
   },
   "author": "Simon Lu",
   "license": "ISC",
