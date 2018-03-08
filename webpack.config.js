@@ -22,7 +22,7 @@ const config = {
 
     devServer: {
         inline: true,
-        port: process.env.PORT
+        port: 8080
     },
 
     resolve: {
@@ -31,14 +31,14 @@ const config = {
 
     context: path.join(__dirname, 'source'),
 
-	module: {
-        loaders : [
+    module: {
+        loaders: [
 
             {
                 test: /\.jsx?/,
-                exclude : [/node_modules/, /bower_components/],
-                include : APP_DIR,
-                loader : 'babel-loader',
+                exclude: [/node_modules/, /bower_components/],
+                include: APP_DIR,
+                loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
                 }
@@ -59,8 +59,8 @@ const config = {
 
     plugins: [
         new copy([
-            {from: APP_DIR + '/html/', to: BUILD_DIR},
-            {from: APP_DIR + '/assets/', to: BUILD_DIR + '/assets/'}
+            { from: APP_DIR + '/html/', to: BUILD_DIR },
+            { from: APP_DIR + '/assets/', to: BUILD_DIR + '/assets/' }
         ], {
             copyUnmodified: false,
             debug: 'debug'
