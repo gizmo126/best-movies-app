@@ -6,6 +6,7 @@ const path = require('path');
 
 // Since the root/src dir contains our index.html
 app.use(express.static(__dirname + '/source/'));
+
 app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname + '/source/html/index.html'));
 });
