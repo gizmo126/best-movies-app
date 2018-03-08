@@ -5,10 +5,10 @@ const path = require('path');
 const app = express();
 
 app.use(express.static(__dirname));
-app.use('/src/assets', express.static(__dirname + '/source'));
+app.use('/source/assets', express.static(__dirname + '/source'));
 
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8081);
 
 /*
 var express = require('express');
