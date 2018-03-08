@@ -25,6 +25,10 @@ const config = {
         port: process.env.PORT
     },
 
+    resolve: {
+        extensions: ['.js', '.jsx', '.sass']
+    },
+
     context: path.join(__dirname, 'source'),
 
 	module: {
