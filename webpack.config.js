@@ -20,6 +20,11 @@ const config = {
         filename: 'bundle.js'
     },
 
+    devServer: {
+        inline: true,
+        port: process.env.PORT
+    },
+
     context: path.join(__dirname, 'source'),
 
 	module: {
@@ -64,11 +69,6 @@ const config = {
         })
     ],
 
-    devServer: {
-      inline: true,
-      contentBase: './source',
-      port: process.env.PORT
-    }
 };
 
 module.exports = config;
