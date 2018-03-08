@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "webpack -d --watch",
     "build": "webpack",
-    "dev": "webpack-dev-server --content-base public/ --history-api-fallback --port $PORT",
+    "dev": "webpack-dev-server --content-base public/ --history-api-fallback",
+    "start": "webpack-dev-server --content-base public/ --history-api-fallback --port $PORT",
     "postinstall": "webpack --config webpack.config.js -p --progress --colors"
   },
   "author": "Simon Lu",

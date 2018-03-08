@@ -67,7 +67,7 @@ const config = {
     devServer: {
       inline: true,
       contentBase: './source',
-      port: 8081
+      port: process.env.PORT
     }
 };
 
