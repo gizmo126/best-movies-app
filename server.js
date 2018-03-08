@@ -1,14 +1,21 @@
 // This is added so Heroku stops complaining
+const path = require('path');
+const express = require('express');
 
-var express = require('express');
-var app     = express();
+const app = express();
 
-app.set('port', (process.env.PORT || 5000));
+const port = process.env.PORT ? process.env.PORT : 8181;
+const dist = path.join(__dirname, 'source');
 
-//For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    response.send(result);
-}).listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
+app.use(express.static(dist));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(dist, 'html/index.html'));
+});
+
+app.listen(port, (error) => {
+  if (error) {
+    console.log(error); // eslint-disable-line no-console
+  }
+  console.info('Express is listening on port %s.', port); // eslint-disable-line no-console
 });
