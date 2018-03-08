@@ -27,7 +27,7 @@ const config = {
 
     context: path.join(__dirname, 'source'),
 
-    resolve: { modulesDirectories: ['node_modules', 'source'], extension: ['', '.js', '.jsx', '.scss'] },
+    resolve: { mainFiles: ['node_modules', 'source'], extensions: ['.js', '.jsx', '.scss'] },
 
 	module: {
         loaders : [

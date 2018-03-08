@@ -8,7 +8,8 @@
     "build": "webpack",
     "dev": "webpack-dev-server --content-base public/ --history-api-fallback",
     "start": "webpack-dev-server --content-base public/ --history-api-fallback --port $PORT",
-    "postinstall": "webpack --config webpack.config.js -p --progress --colors"
+    "postinstall": "webpack --config webpack.config.js -p --progress --colors",
+    "heroku-postbuild": "npm run dev"
   },
   "author": "Simon Lu",
   "license": "ISC",
