@@ -62,7 +62,13 @@ const config = {
             minChunks: Infinity,
             filename: 'vendor.bundle.js'
         })
-    ]
+    ],
+
+    devServer: {
+      inline: true,
+      contentBase: './source',
+      port: 8081
+    }
 };
 
 module.exports = config;
