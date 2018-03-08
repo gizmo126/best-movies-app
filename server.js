@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/source'));
 app.set('port', process.env.PORT || 8082);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'source/html/index.html'));
+    res.sendFile(path.resolve(__dirname, 'public/index.html'));
 });
 
 var server = app.listen(app.get('port'), function () {
