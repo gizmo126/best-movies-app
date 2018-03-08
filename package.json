@@ -11,6 +11,9 @@
   },
   "author": "Simon Lu",
   "license": "ISC",
+  "engines": {
+    "node": "8.8.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.0",
