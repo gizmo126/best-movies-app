@@ -1,2 +1,1 @@
-web: node server.js
-worker: npm run dev
+web: npm run dev
