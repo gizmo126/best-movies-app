@@ -68,7 +68,7 @@ export class GalleryDetails extends Component {
       <div className="prev" onClick={this.handlePrev}>&#x21E6;</div>
       <div className="next" onClick={this.handleNext}>&#x21E8;</div>
       <div className="GalleryDetailsImage">
-        <Image inline="inline" size='medium' src={getImage(result)}/>
+        <Image inline size='medium' src={getImage(result)}/>
       </div>
       <h1>{results[index].title}</h1>
       <h3>Rating: {results[index].vote_average}</h3>
