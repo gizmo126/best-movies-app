@@ -7,11 +7,11 @@
     "watch": "webpack -d --watch",
     "build": "webpack",
     "prod": "NODE_ENV=production node server.js",
-    "dev": "npm run prod & webpack-dev-server --content-base public/ --history-api-fallback",
+    "dev": "node server.js & webpack-dev-server --content-base public/ --history-api-fallback",
     "start": "webpack-dev-server --content-base public/ --history-api-fallback --port $PORT",
     "postinstall": "webpack --config webpack.config.js -p --progress --colors"
   },
-  "author": "Simon Lu",
+  "author": "sghuang2@illinois.edu",
   "license": "ISC",
   "engines": {
     "node": "8.8.0",

@@ -1,6 +1,6 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import { render } from 'react-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css';
 
 // Include your new Components here
@@ -16,7 +16,7 @@ import GalleryDetails from './components/Gallery/GalleryDetails.jsx';
 require('./styles/main.scss');
 
 render(
-    <Router>
+   <Router>
         <div className='Router'>
             <h1>My Movie Database</h1>
             <ul>
@@ -30,6 +30,6 @@ render(
             <Route path="/gallery_details/" component={GalleryDetails}/>
         </div>
     </Router>,
-    // Define your router and replace <Home /> with it!
-    document.getElementById('app')
+   // Define your router and replace <Home /> with it!
+   document.getElementById('app')
 );

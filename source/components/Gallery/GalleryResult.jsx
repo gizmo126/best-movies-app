@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Image } from 'semantic-ui-react';
+import { List, Image, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ export class GalleryResult extends Component {
     render() {
         return (
             <div className="GalleryResult">
-                <List horizontal animated relaxed="very">
+                <Grid centered relaxed padded='horizontally' verticalAlign='middle' columns='equal'>
                   { this.props.results.map((result, index) => (
                       <List.Item key={index}>
                             <Link to={{pathname: '/gallery_details/',
@@ -27,7 +27,7 @@ export class GalleryResult extends Component {
                             </Link>
                       </List.Item>
                    ))}
-                </List>
+                </Grid>
             </div>
         );
       }
