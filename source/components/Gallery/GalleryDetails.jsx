@@ -71,7 +71,7 @@ export class GalleryDetails extends Component {
         <Image inline size='medium' src={getImage(result)}/>
       </div>
       <h1>{results[index].title}</h1>
-      <h3>Rating: {results[index].vote_average}</h3>
+      <h3>Rating: { results[ index ].vote_average } from { results[ index ].vote_count }  votes</h3>
       <h3>Released: {results[index].release_date}</h3>
       <h4>{results[index].overview}</h4>
     </div>)
