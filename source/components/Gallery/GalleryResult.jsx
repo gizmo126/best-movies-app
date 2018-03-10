@@ -38,8 +38,11 @@ function getImage(result) {
    if (!url) {
       url = result['backdrop_path'];
    }
-   return 'https://image.tmdb.org/t/p/w500//' + url;
+   if (!url) {
+      return 'http://www.reelviews.net/resources/img/default_poster.jpg'
+   } else {
+      return 'https://image.tmdb.org/t/p/w500//' + url;
+   }
 }
-
 
 export default GalleryResult
