@@ -18,7 +18,7 @@ require('./styles/main.scss');
 render(
    <Router>
         <div className='Router'>
-            <h1>My Movie Database</h1>
+            <h1>Best Movies Database</h1>
             <ul>
                 <li><Link to="/list">Search</Link></li>
                 <li><Link to="/gallery">Gallery</Link></li>

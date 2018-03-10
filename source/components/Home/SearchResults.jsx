@@ -71,10 +71,10 @@ export class SearchResults extends Component {
 }
 
 function getResults(pages) {
-   let newUrl = 'movie/top_rated?api_key=ff9f06c5d8a831c7a2a99295c33936b7&language=en-US';
+   let newUrl = 'movie/top_rated?api_key=' + TMDB_KEY;
    if (pages >= 0) {
       let promises = [];
-      for (let i = 1; i < 29; i++) {
+      for (let i = 1; i < 20; i++) {
          promises.push(axios({
             method: 'post',
             baseURL: 'https://api.themoviedb.org/3/',
