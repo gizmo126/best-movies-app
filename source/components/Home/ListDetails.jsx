@@ -86,7 +86,11 @@ function getImage(result) {
    if (!url) {
       url = result['backdrop_path'];
    }
-   return 'https://image.tmdb.org/t/p/w185//' + url;
+   if (!url) {
+      return 'http://media.comicbook.com/files/img/default-movie.png'
+   } else {
+      return 'https://image.tmdb.org/t/p/w185//' + url;
+   }
 }
 
 ListResult.Details = {

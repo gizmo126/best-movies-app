@@ -39,7 +39,7 @@ function getImage(result) {
       url = result['backdrop_path'];
    }
    if (!url) {
-      return 'http://www.reelviews.net/resources/img/default_poster.jpg'
+      return 'http://media.comicbook.com/files/img/default-movie.png'
    } else {
       return 'https://image.tmdb.org/t/p/w500//' + url;
    }
