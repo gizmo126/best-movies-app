@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Search, Dropdown, Menu } from 'semantic-ui-react';
+import { Search, Dropdown, Menu, Grid } from 'semantic-ui-react';
 
 import { SearchResults } from './SearchResults.jsx';
 import { RadioButtons } from './RadioButtons.jsx';
@@ -32,6 +32,7 @@ export class SearchBar extends Component {
       // userInput is passed to SearchResults as a URL to query TMDB
       return (
          <div className="SearchBar">
+            <Grid centered>
                 <div className="stuff">
                     <div className="SearchInput">
                         <Search
@@ -57,6 +58,7 @@ export class SearchBar extends Component {
                         </Menu>
                     </div>
                 </div>
+                </Grid>
                 <SearchResults
                     sortBy={this.state.sortBy}
                     radioOrder={this.state.radioOrder}

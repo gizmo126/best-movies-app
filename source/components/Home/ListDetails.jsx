@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button } from 'semantic-ui-react';
+import { Image, Button, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -64,19 +64,21 @@ export class ListDetails extends Component {
       let result = JSON.parse(this.state.result);
       let index = JSON.parse(this.state.index);
       return (
-         <div className="ListDetails">
-              <h4>{index + 1}/{results.length}</h4>
-              <div className="prev" onClick={this.handlePrev}>&#x21E6;</div>
-              <div className="next" onClick={this.handleNext}>&#x21E8;</div>
-              <div className="ListDetailsImage">
-                <Image inline size='medium' src={getImage( result )}/>
-              </div>
-              <h1>{ results[ index ].title }</h1>
-              <h3>Rank: { results[ index ].rank }</h3>
-              <h3>Rating: { results[ index ].vote_average } from { results[ index ].vote_count }  votes</h3>
-              <h3>Released: {results[ index ].release_date}</h3>
-              <h4>{ results[ index ].overview }</h4>
-          </div>
+         <Grid centered>
+           <div className="ListDetails">
+                <h4>{index + 1}/{results.length}</h4>
+                <div className="prev" onClick={this.handlePrev}>&#x21E6;</div>
+                <div className="next" onClick={this.handleNext}>&#x21E8;</div>
+                <div className="ListDetailsImage">
+                  <Image inline size='medium' src={getImage( result )}/>
+                </div>
+                <h1>{ results[ index ].title }</h1>
+                <h3>Rank: { results[ index ].rank }</h3>
+                <h3>Rating: { results[ index ].vote_average } from { results[ index ].vote_count }  votes</h3>
+                <h3>Released: {results[ index ].release_date}</h3>
+                <h4>{ results[ index ].overview }</h4>
+            </div>
+        </Grid>
       )
    }
 }

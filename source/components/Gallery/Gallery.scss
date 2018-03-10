@@ -49,11 +49,10 @@ $color-grey: #D3D3D3;
   @include fadeInAnimation();
   background-color: $color-grey;
   border: 1px double #888;
-  width: 80%;
+  width: 60%;
   padding: 30px;
   margin-top: 5%;
   margin-bottom: 50px;
-  margin-left: 10%;
 
   h4 {
     padding: 30px;
